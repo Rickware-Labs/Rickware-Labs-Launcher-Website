@@ -1,1 +1,1 @@
-# Rickware---Labs-Launcher-Website
+# Rickware-Labs-Launcher-Website
