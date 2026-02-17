@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - Rickware Labs</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/png" href="../images/main/logo.png">
+</head>
+<body>
+    <div class="settings-container">
+        <div class="settings-sidebar">
+            <div class="settings-logo">
+                <img src="../images/main/logo.png" alt="Logo" onerror="this.style.display='none'">
+                <h2>Rickware Labs</h2>
+            </div>
+            <nav class="settings-nav">
+                <a href="../index.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    <span>Back to Store</span>
+                </a>
+                <a href="./account_settings.html" class="settings-nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Account Settings</span>
+                </a>
+                <a href="./preferences.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span>Preferences</span>
+                </a>
+                <a href="./payment_methods.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Payment Methods</span>
+                </a>
+                <a href="./order_history.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span>Order History</span>
+                </a>
+                <a href="./help_and_support.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>Help & Support</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="settings-content">
+            <div class="settings-header">
+                <h1>Account Settings</h1>
+                <p>Manage your account information and preferences</p>
+            </div>
+
+            <div class="settings-section">
+                <div class="profile-picture-section">
+                    <h3>Profile Picture</h3>
+                    <div class="profile-picture-container">
+                        <img src="" alt="Profile" id="settingsProfileImage" class="settings-profile-img">
+                        <div class="profile-picture-actions">
+                            <input type="file" id="profileImageInput" accept="image/png" style="display: none;">
+                            <button class="btn-secondary" id="uploadImageBtn">Upload New Picture</button>
+                            <small>PNG format only, max 5MB</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Personal Information</h3>
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="username" class="form-control" required pattern="^[A-Za-z][A-Za-z0-9._-]{6,19}$">
+                        <small>7-20 characters, must start with letter, contain at least one uppercase and one number</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="emailAddress" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phoneNumber" class="form-control" pattern="[0-9+\-\s()]*">
+                        <small>Numbers only</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="emailNewsletter">
+                            <span>Subscribe to email newsletter</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Account Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Account Type</label>
+                        <span id="accountType">User</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Account Permissions</label>
+                        <span id="accountPermissions">User</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Two-Factor Authentication</label>
+                        <span id="twoFA">Disabled</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Discord Linked</label>
+                        <span id="discordLinked">Not Linked</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Google Linked</label>
+                        <span id="googleLinked">Not Linked</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Product License Key</h3>
+                <div class="license-key-container">
+                    <input type="text" id="productKey" class="form-control" readonly>
+                    <button class="btn-secondary" id="copyKeyBtn">Copy Key</button>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Purchased Products</h3>
+                <div class="list-container" id="purchasedProductsList">
+                    <p class="empty-message">No purchased products</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Product License Keys</h3>
+                <div class="list-container" id="licenseKeysList">
+                    <p class="empty-message">No license keys</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>System Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Last IP Address</label>
+                        <span id="lastIP">Unknown</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Last Login</label>
+                        <span id="lastLogin">Unknown</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Login Count</label>
+                        <span id="loginCount">0</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Operating System</label>
+                        <span id="lastOS">Unknown</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Browser</label>
+                        <span id="userBrowser">Unknown</span>
+                    </div>
+                    <div class="info-item">
+                        <label>User Agent</label>
+                        <span id="userAgent" class="long-text">Unknown</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Discord Integration</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Discord Username</label>
+                        <span id="discordUsername">Not Found</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Discord Display Name</label>
+                        <span id="discordDisplayName">Not Found</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Discord User ID</label>
+                        <span id="discordUserID">Not Found</span>
+                    </div>
+                    <div class="info-item">
+                        <label>In Server</label>
+                        <span id="discordUserServer">No</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Server Coins</label>
+                        <span id="discordCoins">0</span>
+                    </div>
+                    <div class="info-item">
+                        <label>Server XP</label>
+                        <span id="discordXP">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Discord Server Roles</h3>
+                <div class="list-container" id="discordRolesList">
+                    <p class="empty-message">No roles</p>
+                </div>
+            </div>
+
+            <div class="settings-actions">
+                <button class="btn-primary" id="saveSettingsBtn">Save Changes</button>
+                <button class="btn-secondary" id="cancelSettingsBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/secret.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        let originalData = {};
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = await getCurrentUser();
+            if (!user) {
+                window.location.href = './login_register.html';
+                return;
+            }
+
+            loadAccountSettings(user);
+            setupImageUpload();
+            setupSaveCancel();
+        });
+
+        async function getCurrentUser() {
+            const cookie = document.cookie.split('; ').find(row => row.startsWith('rickware_session='));
+            if (cookie) {
+                try {
+                    const data = JSON.parse(atob(cookie.split('=')[1]));
+                    const fileData = await getGitHubFileContent();
+                    if (fileData) {
+                        return fileData.content.accounts.find(acc => acc.account_id === data.account_id);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+
+            const sessionData = sessionStorage.getItem('rickware_user');
+            if (sessionData) {
+                return JSON.parse(sessionData);
+            }
+
+            return null;
+        }
+
+        function loadAccountSettings(user) {
+            originalData = JSON.parse(JSON.stringify(user));
+
+            const imageUrl = `https://raw.githubusercontent.com/${github_repo_owner}/${github_repo_name1}/main/${github_account_images_path}/${user.username}/profile_picture_1.png`;
+            const profileImg = document.getElementById('settingsProfileImage');
+            profileImg.src = imageUrl;
+            profileImg.onerror = () => {
+                profileImg.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23ffffff%22 stroke-width=%222%22%3E%3Cpath d=%22M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2%22/%3E%3Ccircle cx=%2212%22 cy=%227%22 r=%224%22/%3E%3C/svg%3E';
+            };
+
+            document.getElementById('username').value = user.username || '';
+            document.getElementById('emailAddress').value = user.email_adress || '';
+            document.getElementById('phoneNumber').value = user.phone_number || '';
+            document.getElementById('emailNewsletter').checked = user.email_newsletter || false;
+
+            document.getElementById('accountType').textContent = user.account_type || 'User';
+            document.getElementById('accountPermissions').textContent = user.account_permissions || 'User';
+            document.getElementById('twoFA').textContent = user['2_fa'] ? 'Enabled' : 'Disabled';
+            document.getElementById('discordLinked').textContent = user.discord_linked ? 'Linked' : 'Not Linked';
+            document.getElementById('googleLinked').textContent = user.google_linked ? 'Linked' : 'Not Linked';
+
+            document.getElementById('productKey').value = user.database_main_product_key || '';
+
+            const purchasedList = document.getElementById('purchasedProductsList');
+            if (user.purchased_products && user.purchased_products.length > 0) {
+                purchasedList.innerHTML = user.purchased_products.map(p => `<div class="list-item">${p}</div>`).join('');
+            }
+
+            const licenseList = document.getElementById('licenseKeysList');
+            if (user.product_license_keys && user.product_license_keys.length > 0) {
+                licenseList.innerHTML = user.product_license_keys.map(k => `<div class="list-item">${k}</div>`).join('');
+            }
+
+            document.getElementById('lastIP').textContent = user.user_last_ip || 'Unknown';
+            document.getElementById('lastLogin').textContent = user.user_last_login ? new Date(user.user_last_login).toLocaleString() : 'Unknown';
+            document.getElementById('loginCount').textContent = user.user_login_count || '0';
+            document.getElementById('lastOS').textContent = user.user_last_os || 'Unknown';
+            document.getElementById('userBrowser').textContent = user.user_browser || 'Unknown';
+            document.getElementById('userAgent').textContent = user.user_user_agent || 'Unknown';
+
+            document.getElementById('discordUsername').textContent = user.user_discord_username || 'Not Found';
+            document.getElementById('discordDisplayName').textContent = user.user_discord_displayname || 'Not Found';
+            document.getElementById('discordUserID').textContent = user.user_discord_user_id || 'Not Found';
+            document.getElementById('discordUserServer').textContent = user.user_discord_user_server === 'true' ? 'Yes' : 'No';
+            document.getElementById('discordCoins').textContent = (user.user_discord_user_coin_amount || 0).toLocaleString();
+            document.getElementById('discordXP').textContent = (user.user_discord_user_xp_amount || 0).toLocaleString();
+
+            const rolesList = document.getElementById('discordRolesList');
+            if (user.user_discord_user_roles && user.user_discord_user_roles.length > 0) {
+                rolesList.innerHTML = user.user_discord_user_roles.map(r => `<div class="list-item">${r}</div>`).join('');
+            }
+
+            document.getElementById('copyKeyBtn').addEventListener('click', () => {
+                document.getElementById('productKey').select();
+                document.execCommand('copy');
+                alert('License key copied to clipboard!');
+            });
+        }
+
+        function setupImageUpload() {
+            document.getElementById('uploadImageBtn').addEventListener('click', () => {
+                document.getElementById('profileImageInput').click();
+            });
+
+            document.getElementById('profileImageInput').addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                if (!file.type.match('image/png')) {
+                    alert('Only PNG files are allowed!');
+                    return;
+                }
+
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('File size must be less than 5MB!');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    document.getElementById('settingsProfileImage').src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function setupSaveCancel() {
+            document.getElementById('saveSettingsBtn').addEventListener('click', async () => {
+                const user = await getCurrentUser();
+                if (!user) return;
+
+                const newUsername = document.getElementById('username').value;
+                const newEmail = document.getElementById('emailAddress').value;
+                const newPhone = document.getElementById('phoneNumber').value;
+                const newsletter = document.getElementById('emailNewsletter').checked;
+
+                if (!validateUsername(newUsername)) {
+                    alert('Invalid username format!');
+                    return;
+                }
+
+                if (!newEmail || !newEmail.includes('@')) {
+                    alert('Invalid email address!');
+                    return;
+                }
+
+                const fileData = await getGitHubFileContent();
+                if (!fileData) {
+                    alert('Failed to connect to database');
+                    return;
+                }
+
+                const accounts = fileData.content.accounts;
+                const accountIndex = accounts.findIndex(acc => acc.account_id === user.account_id);
+
+                if (accountIndex === -1) {
+                    alert('Account not found!');
+                    return;
+                }
+
+                accounts[accountIndex].username = newUsername;
+                accounts[accountIndex].email_adress = newEmail;
+                accounts[accountIndex].phone_number = newPhone || null;
+                accounts[accountIndex].email_newsletter = newsletter;
+
+                const imageInput = document.getElementById('profileImageInput');
+                if (imageInput.files.length > 0) {
+                    const imageFile = imageInput.files[0];
+                    await uploadProfileImage(imageFile, newUsername);
+                }
+
+                fileData.content.accounts = accounts;
+                const result = await updateGitHubFile(fileData.content, fileData.sha, `Account settings updated: ${newUsername}`);
+
+                if (result) {
+                    alert('Settings saved successfully!');
+                    sessionStorage.setItem('rickware_user', JSON.stringify(accounts[accountIndex]));
+                    window.location.reload();
+                } else {
+                    alert('Failed to save settings');
+                }
+            });
+
+            document.getElementById('cancelSettingsBtn').addEventListener('click', () => {
+                window.location.href = '../index.html';
+            });
+        }
+
+        function validateUsername(username) {
+            if (username.length < 7 || username.length > 20) return false;
+            if (!/^[A-Za-z]/.test(username)) return false;
+            if (!/[A-Z]/.test(username)) return false;
+            if (!/[0-9]/.test(username)) return false;
+            if (/^[._-]/.test(username) || /[._-]$/.test(username)) return false;
+            if (!/^[A-Za-z0-9._-]+$/.test(username)) return false;
+            return true;
+        }
+
+        async function uploadProfileImage(file, username) {
+            const reader = new FileReader();
+            return new Promise((resolve, reject) => {
+                reader.onload = async (event) => {
+                    const base64Data = event.target.result.split(',')[1];
+                    const path = `${github_account_images_path}/${username}/profile_picture_1.png`;
+
+                    try {
+                        let sha = null;
+                        try {
+                            const existingFile = await fetch(`https://api.github.com/repos/${github_repo_owner}/${github_repo_name1}/contents/${path}`, {
+                                headers: {
+                                    'Authorization': `token ${github_database_1_token}`,
+                                    'Accept': 'application/vnd.github.v3+json'
+                                }
+                            });
+                            if (existingFile.ok) {
+                                const data = await existingFile.json();
+                                sha = data.sha;
+                            }
+                        } catch (e) {
+                        }
+
+                        const uploadData = {
+                            message: `Upload profile picture for ${username}`,
+                            content: base64Data
+                        };
+
+                        if (sha) {
+                            uploadData.sha = sha;
+                        }
+
+                        const response = await fetch(`https://api.github.com/repos/${github_repo_owner}/${github_repo_name1}/contents/${path}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Authorization': `token ${github_database_1_token}`,
+                                'Accept': 'application/vnd.github.v3+json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(uploadData)
+                        });
+
+                        if (response.ok) {
+                            resolve(true);
+                        } else {
+                            reject(new Error('Upload failed'));
+                        }
+                    } catch (error) {
+                        reject(error);
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+    </script>
+</body>
+</html>
