@@ -92,7 +92,12 @@
                     <span class="badge" id="cartBadge">0</span>
                 </button>
 
-                <button class="user-profile-btn" id="userProfileBtn">
+                <div id="authButtons" style="display: flex; gap: 10px;">
+                    <button id="loginBtn" class="top-nav-item">Login</button>
+                    <button id="registerBtn" class="top-nav-item">Register</button>
+                </div>
+
+                <button class="user-profile-btn" id="userProfileBtn" style="display: none;">
                     <img src="" alt="Profile" class="profile-img" id="profileImage">
                     <div class="profile-info">
                         <span id="usernameDisplay"></span>
@@ -118,64 +123,7 @@
                     <div class="products-grid" id="productsGrid"></div>
                 </div>
 
-                <div class="tab-content" id="browseTab">
-                    <div class="filters-container">
-                        <h3 data-translate="filters">Filters</h3>
-                        <button class="btn-secondary" id="resetFilters" data-translate="reset">Reset</button>
-                    </div>
-
-                    <div class="filter-group">
-                        <h4 data-translate="keywords">Keywords</h4>
-                        <input type="text" id="keywordsFilter" placeholder="Search keywords">
-                    </div>
-
-                    <div class="filter-group">
-                        <h4 data-translate="events">Events</h4>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" value="event1"> Event 1</label>
-                            <label><input type="checkbox" value="event2"> Event 2</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-group">
-                        <h4 data-translate="price">Price</h4>
-                        <div class="price-range">
-                            <input type="number" placeholder="Min" id="minPrice">
-                            <input type="number" placeholder="Max" id="maxPrice">
-                        </div>
-                    </div>
-
-                    <div class="filter-group">
-                        <h4 data-translate="genre">Genre</h4>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" value="action"> Action</label>
-                            <label><input type="checkbox" value="adventure"> Adventure</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-group">
-                        <h4 data-translate="features">Features</h4>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" value="multiplayer"> Multiplayer</label>
-                            <label><input type="checkbox" value="singleplayer"> Singleplayer</label>
-                        </div>
-                    </div>
-
-                    <div class="filter-group">
-                        <h4 data-translate="types">Types</h4>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" value="apps" data-translate="apps">Apps</label>
-                            <label><input type="checkbox" value="editor" data-translate="editor">Editor</label>
-                        </div>
-                    </div>
-
-                    <div class="products-grid" id="browseProducts"></div>
-                </div>
-
-                <div class="tab-content" id="newsTab">
-                    <h2>News Content</h2>
-                    <p>Latest updates and news.</p>
-                </div>
+                
             </section>
         </main>
 
