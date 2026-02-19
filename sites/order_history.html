@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - Rickware Labs</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/png" href="../images/main/logo.png">
+</head>
+<body>
+    <div class="settings-container">
+        <div class="settings-sidebar">
+            <div class="settings-logo">
+                <img src="../images/main/logo.png" alt="Logo" onerror="this.style.display='none'">
+                <h2>Rickware Labs</h2>
+            </div>
+            <nav class="settings-nav">
+                <a href="../index.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                    <span>Back to Store</span>
+                </a>
+                <a href="./account_settings.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Account Settings</span>
+                </a>
+                <a href="./preferences.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span>Preferences</span>
+                </a>
+                <a href="./payment_methods.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Payment Methods</span>
+                </a>
+                <a href="./order_history.html" class="settings-nav-item active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span>Order History</span>
+                </a>
+                <a href="./help_and_support.html" class="settings-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>Help & Support</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="settings-content">
+            <div class="settings-header">
+                <h1>Order History</h1>
+                <p>View your purchase history and product details</p>
+            </div>
+
+            <div class="settings-section">
+                <div class="order-summary-cards">
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                        <div class="summary-info">
+                            <h3 id="totalPurchases">0</h3>
+                            <p>Total Purchases</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="summary-info">
+                            <h3 id="activeSubscriptions">0</h3>
+                            <p>Active Subscriptions</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <div class="summary-info">
+                            <h3 id="totalSpent">$0.00</h3>
+                            <p>Total Spent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Recent Orders</h3>
+                <div class="orders-table">
+                    <div class="table-header">
+                        <span data-translate="date">Date</span>
+                        <span data-translate="product">Product</span>
+                        <span data-translate="amount">Amount</span>
+                        <span data-translate="status">Status</span>
+                    </div>
+                    <div id="ordersList"></div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>License Keys</h3>
+                <div id="licenseKeysContainer"></div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Product Types</h3>
+                <div id="productTypesContainer"></div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Paused Licenses</h3>
+                <div id="pausedLicensesContainer"></div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Banned Products</h3>
+                <div id="bannedProductsContainer"></div>
+            </div>
+
+            <div class="settings-actions">
+                <a href="../index.html" class="btn-secondary">Back to Store</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const user = await getCurrentUser();
+            if (!user) {
+                window.location.href = './login_register.html';
+                return;
+            }
+
+            await loadOrderHistory(user);
+        });
+
+        async function loadOrderHistory(user) {
+            const totalPurchasesElem = document.getElementById('totalPurchases');
+            const activeSubscriptionsElem = document.getElementById('activeSubscriptions');
+            const totalSpentElem = document.getElementById('totalSpent');
+            const ordersList = document.getElementById('ordersList');
+            const licenseKeysContainer = document.getElementById('licenseKeysContainer');
+            const productTypesContainer = document.getElementById('productTypesContainer');
+            const pausedLicensesContainer = document.getElementById('pausedLicensesContainer');
+            const bannedProductsContainer = document.getElementById('bannedProductsContainer');
+
+            // Stubbed data - replace with API fetch if available
+            const purchasedProducts = user.purchased_products || [];
+            const licenseKeys = user.license_keys || [];
+            const productTypes = user.product_types || [];
+            const pausedLicenses = user.paused_licenses || [];
+            const bannedProducts = user.banned_products || [];
+
+            totalPurchasesElem.textContent = purchasedProducts.length;
+            activeSubscriptionsElem.textContent = purchasedProducts.filter(p => p.status === 'active').length;
+            totalSpentElem.textContent = `$${purchasedProducts.reduce((sum, p) => sum + p.amount, 0).toFixed(2)}`;
+
+            if (purchasedProducts.length === 0) {
+                ordersList.innerHTML = '<div class="empty-state"><p>No orders yet</p></div>';
+            } else {
+                ordersList.innerHTML = purchasedProducts.map(p => `
+                    <div class="table-row">
+                        <span>${p.date}</span>
+                        <span>${p.product}</span>
+                        <span>$${p.amount.toFixed(2)}</span>
+                        <span class="status-badge ${p.status}">${p.status}</span>
+                    </div>
+                `).join('');
+            }
+
+            if (licenseKeys.length === 0) {
+                licenseKeysContainer.innerHTML = '<div class="empty-state-small"><p>No active license keys</p></div>';
+            } else {
+                licenseKeysContainer.innerHTML = licenseKeys.map(key => {
+                    const keyDisplay = key === 'UNLOCK-ALL-KEY' ? key : `${key.substring(0, 20)}...`;
+                    return `
+                        <div class="license-key-item">
+                            <div class="license-key-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                                </svg>
+                            </div>
+                            <div class="license-key-info">
+                                <span class="license-key-text">${keyDisplay}</span>
+                                <button class="btn-copy-key" onclick="copyToClipboard('${key}')">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            if (productTypes.length === 0) {
+                productTypesContainer.innerHTML = '<div class="empty-state-small"><p>No product types recorded</p></div>';
+            } else {
+                productTypesContainer.innerHTML = `<div class="tags-container">${productTypes.map(type => `<span class="tag">${type === 'ALL' ? 'All Types' : type}</span>`).join('')}</div>`;
+            }
+
+            if (pausedLicenses.length === 0) {
+                pausedLicensesContainer.innerHTML = '<div class="empty-state-small"><p>No paused licenses</p></div>';
+            } else {
+                pausedLicensesContainer.innerHTML = `<div class="list-items">${pausedLicenses.map(lic => `<div class="list-item paused">${lic}</div>`).join('')}</div>`;
+            }
+
+            if (bannedProducts.length === 0) {
+                bannedProductsContainer.innerHTML = '<div class="empty-state-small success"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><p>No banned products</p></div>';
+            } else {
+                bannedProductsContainer.innerHTML = `<div class="list-items">${bannedProducts.map(prod => `<div class="list-item banned">${prod}</div>`).join('')}</div>`;
+            }
+        }
+
+        function copyToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                alert('License key copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy:', err);
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
