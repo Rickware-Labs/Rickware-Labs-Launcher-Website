@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rickware - Labs - Launcher</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" type="image/png" href="./images/main/logo.png">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="./images/main/logo.png" alt="Logo" class="sidebar-logo" onerror="this.style.display='none'">
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-page="store">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span data-translate="store">Store</span>
+                </button>
+                <button class="nav-item" data-page="customer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span data-translate="customer_panel">Customer Panel</span>
+                </button>
+                <a href="#" class="nav-item discord-btn" id="discordBtn">
+                    <svg width="20" height="20" viewBox="0 0 71 55" fill="currentColor">
+                        <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.3087 23.0133 30.1353 26.2532 30.1067 30.1693C30.1067 34.1136 27.2801 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9006 23.0133 53.7272 26.2532 53.6986 30.1693C53.6986 34.1136 50.9006 37.3253 47.3178 37.3253Z"/>
+                    </svg>
+                    <span>Discord</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="download-status" id="downloadStatus">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </div>
+                <div class="active-downloads hidden" id="activeDownloads"></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <button class="back-btn" id="backBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                </button>
+
+                <div class="search-container">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search store" data-translate="search_store">
+                </div>
+
+                <nav class="top-nav">
+                    <button class="top-tab active" data-tab="discover">Home</button>
+                    <button class="top-tab" data-tab="partner">Partner</button>
+                    <button class="top-tab" data-tab="news">News</button>
+                </nav>
+
+                <div class="top-bar-actions">
+                    <div class="dropdown-wrapper" id="wishlistWrapper">
+                        <button class="icon-action-btn" id="wishlistBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span data-translate="wishlist">Wishlist</span>
+                            <span class="badge" id="wishlistBadge">0</span>
+                        </button>
+                        <div class="dropdown-panel" id="wishlistDropdown">
+                            <div class="dropdown-header">Wishlist</div>
+                            <div class="dropdown-items" id="wishlistItems">
+                                <div class="dropdown-empty">Your wishlist is empty.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-wrapper" id="cartWrapper">
+                        <button class="icon-action-btn" id="cartBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span data-translate="cart">Cart</span>
+                            <span class="badge" id="cartBadge">0</span>
+                        </button>
+                        <div class="dropdown-panel" id="cartDropdown">
+                            <div class="dropdown-header">Cart</div>
+                            <div class="dropdown-items" id="cartItems">
+                                <div class="dropdown-empty">Your cart is empty.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="authButtons" style="display:flex;gap:10px;">
+                        <button id="loginBtn" class="auth-btn login-btn">Login</button>
+                        <button id="registerBtn" class="auth-btn register-btn">Register</button>
+                    </div>
+
+                    <button class="user-profile-btn" id="userProfileBtn" style="display:none;">
+                        <img src="" alt="Profile" class="profile-img" id="profileImage">
+                        <div class="profile-info">
+                            <span id="usernameDisplay"></span>
+                            <small id="userType">User</small>
+                        </div>
+                    </button>
+                </div>
+            </header>
+
+            <section class="content" id="content">
+
+                <div class="tab-content active" id="discoverTab">
+                    <div class="sorting-bar">
+                        <div class="sort-select">
+                            <span data-translate="show">Show:</span>
+                            <select id="sortSelect" class="styled-select">
+                                <option value="new" data-translate="new_release">New Releases</option>
+                                <option value="price-low" data-translate="price_low">Price: Low to High</option>
+                                <option value="price-high" data-translate="price_high">Price: High to Low</option>
+                                <option value="popular" data-translate="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="productsGrid"></div>
+                </div>
+
+                <div class="tab-content" id="partnerTab">
+                    <div class="partner-page">
+                        <div class="partner-page-header">
+                            <h1>Partner</h1>
+                            <p>Our trusted community partners and collaborators.</p>
+                        </div>
+                        <div class="partner-grid" id="partnerGrid"></div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="newsTab">
+                    <div class="news-page">
+                        <div class="news-page-header">
+                            <h1>News</h1>
+                            <p>Latest updates, releases and announcements.</p>
+                        </div>
+                        <div class="news-grid">
+
+                            <div class="news-card news-card-featured">
+                                <div class="news-card-badge badge-new">New Info</div>
+                                <div class="news-card-meta">
+                                    <span class="news-date">Feb 21, 2026</span>
+                                    <span class="news-category">Announcement</span>
+                                </div>
+                                <h2 class="news-card-title">Closed Beta Starting Soon</h2>
+                                <p class="news-card-body">The Rickware - Labs Closed Beta is launching soon! Only selected users will receive access to the closed beta. As a reward for participating, every accepted beta tester will receive a permanent Unlock All account — granting full and unlimited access to all tools &amp; software offered by Rickware - Labs, forever.</p>
+                                <div class="news-card-footer">
+                                    <span class="news-author">by Rickware - Labs &nbsp;&nbsp;(.rick.c137)</span>
+                                </div>
+                            </div>
+
+                            <div class="news-card">
+                                <div class="news-card-badge badge-update">Update</div>
+                                <div class="news-card-meta">
+                                    <span class="news-date">Feb 21, 2026</span>
+                                    <span class="news-category">Partners</span>
+                                </div>
+                                <h2 class="news-card-title">Quantum Hub joins as official Partner</h2>
+                                <p class="news-card-body">We are excited to welcome Quantum Hub to the Rickware partner network. They bring premium tools and resources for the community. Check them out in the Partner tab.</p>
+                                <div class="news-card-footer">
+                                    <span class="news-author">by Rickware - Labs &nbsp;&nbsp;(.rick.c137)</span>
+                                </div>
+                            </div>
+
+                            <div class="news-card">
+                                <div class="news-card-badge badge-update">Update</div>
+                                <div class="news-card-meta">
+                                    <span class="news-date">Feb 21, 2026</span>
+                                    <span class="news-category">Partners</span>
+                                </div>
+                                <h2 class="news-card-title">ByteBunny Discord Self-Bot joins as official Partner</h2>
+                                <p class="news-card-body">We are proud to welcome ByteBunny Discord Self-Bot to the Rickware partner network. A powerful tool for Discord automation, now officially part of our growing partner ecosystem. Check them out in the Partner tab.</p>
+                                <div class="news-card-footer">
+                                    <span class="news-author">by Rickware - Labs &nbsp;&nbsp;(.rick.c137)</span>
+                                </div>
+                            </div>
+
+                            <div class="news-card">
+                                <div class="news-card-badge badge-info">Info</div>
+                                <div class="news-card-meta">
+                                    <span class="news-date">Feb 21, 2026</span>
+                                    <span class="news-category">Community</span>
+                                </div>
+                                <h2 class="news-card-title">Discord Server is finished</h2>
+                                <p class="news-card-body">Our Discord community server is finished! The server comes fully equipped with a complete infrastructure: ticket system, XP system, a custom in-server bank system, captcha verify system, customer ratings system, and our own Rickware - Labs AI support directly available inside Discord server tickets.</p>
+                                <div class="news-card-footer">
+                                    <span class="news-author">by Rickware - Labs &nbsp;&nbsp;(.rick.c137)</span>
+                                </div>
+                            </div>
+
+                            <div class="news-card">
+                                <div class="news-card-badge badge-info">Info</div>
+                                <div class="news-card-meta">
+                                    <span class="news-date">Feb 21, 2026</span>
+                                    <span class="news-category">Features</span>
+                                </div>
+                                <h2 class="news-card-title">New payment methods coming soon</h2>
+                                <p class="news-card-body">We are working on adding additional payment methods including crypto payments and PayPal. Expected rollout is within the next 30 days. Stay tuned for more details.</p>
+                                <div class="news-card-footer">
+                                    <span class="news-author">by Rickware - Labs &nbsp;&nbsp;(.rick.c137)</span>
+                                </div>
+                            </div>
+
+                            <div class="news-card">
+                                <div class="news-card-badge badge-info">Info</div>
+                                <div class="news-card-meta">
+                                    <span class="news-date">Feb 21, 2026</span>
+                                    <span class="news-category">Development</span>
+                                </div>
+                                <h2 class="news-card-title">New &amp; More Tools coming soon</h2>
+                                <p class="news-card-body">Many existing tools are currently being completely recoded from the ground up to ensure cross-platform and launcher compatibility, maximum user-friendliness, performance improvements, feature enhancements, new functionalities, and a full overhaul of all graphical user interfaces (GUIs). This requires a significant amount of work alongside the continued development of brand new tools — we appreciate your patience.</p>
+                                <div class="news-card-footer">
+                                    <span class="news-author">by Rickware - Labs &nbsp;&nbsp;(.rick.c137)</span>
+                                </div>
+                            </div>
+
+                            <div class="news-card">
+                                <div class="news-card-badge badge-maintenance">Maintenance</div>
+                                <div class="news-card-meta">
+                                    <span class="news-date">Feb 21, 2026</span>
+                                    <span class="news-category">System</span>
+                                </div>
+                                <h2 class="news-card-title">Scheduled maintenance — Jan 22, 02:00 UTC</h2>
+                                <p class="news-card-body">We will be performing scheduled server maintenance on January 22nd from 02:00 to 04:00 UTC. During this window, the launcher and API may be temporarily unavailable. We apologize for any inconvenience.</p>
+                                <div class="news-card-footer">
+                                    <span class="news-author">by Rickware - Labs &nbsp;&nbsp;(.rick.c137)</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <div class="profile-sidebar" id="profileSidebar">
+            <div class="profile-header">
+                <img src="" alt="Profile" class="profile-img-large" id="profileImageLarge">
+                <div class="profile-info">
+                    <h3 id="usernameDisplaySidebar"></h3>
+                    <span class="user-type-badge" id="userTypeSidebar">User</span>
+                </div>
+            </div>
+            <nav class="profile-sidebar-nav">
+                <a href="./sites/account_settings.html" class="profile-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span data-translate="account_settings">Account Settings</span>
+                </a>
+                <a href="./sites/preferences.html" class="profile-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span data-translate="preferences">Preferences</span>
+                </a>
+                <a href="./sites/payment_methods.html" class="profile-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span data-translate="payment_methods">Payment Methods</span>
+                </a>
+                <a href="./sites/order_history.html" class="profile-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span data-translate="order_history">Order History</span>
+                </a>
+                <a href="./sites/help_and_support.html" class="profile-nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span data-translate="help_support">Help &amp; Support</span>
+                </a>
+                <div class="profile-divider"></div>
+                <button class="profile-nav-item logout-btn" id="logoutBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span data-translate="logout">Logout</span>
+                </button>
+            </nav>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
