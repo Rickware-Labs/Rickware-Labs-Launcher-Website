@@ -1,0 +1,112 @@
+{
+    "categorys": [
+    {
+      "discord_tools": "Discord Tools",
+      "social_media_tools": "Social Media Tools",
+      "advertising_tools": "Advertising Tools",
+      "general_tools": "General Tools",
+      "automation_tools": "Automation Tools"
+    }
+  ],
+
+    "license_categories": [
+    {
+        "free": "Free",
+        "1_day": "1 Day - (24 Hours)",
+        "1_week": "1 Week - (7 Days)",
+        "1_month": "1 Month - (4 Weeks)",
+        "6_months": "6 Months - (24 Weeks)",
+        "1_year": "1 Year - (48 Weeks)",
+        "lifetime": "Lifetime - (Forever :3)"
+    }
+  ],
+
+  "products": [
+    {
+      "id": 1,
+      "category": "Discord Tools",
+      "version": "V1",
+      "product_id": "93962724144314907176",
+      "title": "• Discord Status Rotator",
+      "license_categories": [
+      {
+        "free": "Free"
+      }
+    ],
+      "license_categorie_prices": [
+      {
+        "free": "Free"
+      }
+    ],
+      "description": "Rotate your Discord account status with as many different messages and delays as you want on as many accounts simultaneously as you want, use different presets for different accounts or a uniform rotation (Onliner / full account client host coming soon)",
+      "full_description": "",
+      "banner": "Top #1 Free Tool",
+      "preview_image_url": "https://cdn.discordapp.com/attachments/1474602413225672744/1474604500575846634/discord_status_rotator_main.png?ex=699a73f5&is=69992275&hm=02ee645d06a874509e118cb3dd9c8e6c91175673b38b88a76ad581619119cad7&",
+      "image_url_1": "",
+      "image_url_2": "",
+      "image_url_3": "",
+      "image_url_4": "",
+      "owner_name": ".rick.c137",
+      "discord_url": "https://discord.gg/6jpHJ8bEKP",
+      "Stock": "∞",
+      "price": null,
+      "original_price": null,
+      "auto_update": true,
+      "auto_setup": true,
+      "coupon_codes": false
+    },
+    {
+      "id": 1,
+      "category": "Advertising Tools",
+      "version": "V3",
+      "product_id": "80236325233858092510",
+      "title": "• WhatsApp Mass DM Tool",
+      "license_categories": [
+      {
+        "1_day": "1 Day - (24 Hours)",
+        "1_week": "1 Week - (7 Days)",
+        "1_month": "1 Month - (4 Weeks)",
+        "6_months": "6 Months - (24 Weeks)",
+        "1_year": "1 Year - (48 Weeks)",
+        "lifetime": "Lifetime - (Forever :3)"
+      }
+    ],
+      "license_categorie_prices": [
+      {
+        "1_day": "9,99",
+        "1_day_original": "14,99",
+        "1_week": "29,99",
+        "1_week_original": "104,93",
+        "1_month": "49,99",
+        "1_month_original": "419,72",
+        "6_months": "99,99",
+        "6_months_original": "2518.32",
+        "1_year": "149,99",
+        "1_year_original": "5036,64",
+        "lifetime": "249,99",
+        "lifetime_original": "599,99"
+      }
+    ],
+      "description": "Cross-platform Next Level WhatsApp Mass DM Tool with high-end anti-bot protection bypasses and advanced mechanisms to mimic the user behavior of the WhatsApp account holder 1:1. Ban risk = 0",
+      "full_description": "",
+      "banner": "Most Popular",
+      "preview_image_url": "https://cdn.discordapp.com/attachments/1474602413225672744/1474603913784201418/whatsapp_mass_dm_tool_main.png?ex=699a7369&is=699921e9&hm=183f83efae392d689d178c629f43b223ce95556bab9a44bf260d6e781f6cc72c&",
+      "image_url_1": "",
+      "image_url_2": "",
+      "image_url_3": "",
+      "image_url_4": "",
+      "image_url_5": "",
+      "image_url_6": "",
+      "image_url_7": "",
+      "image_url_8": "",
+      "owner_name": ".rick.c137",
+      "discord_url": "https://discord.gg/6jpHJ8bEKP",
+      "Stock": "∞",
+      "price": null,
+      "original_price": null,
+      "auto_update": true,
+      "auto_setup": true,
+      "coupon_codes": true
+    }
+  ]
+}
